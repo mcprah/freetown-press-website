@@ -1,0 +1,31 @@
+.about{padding:100px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.about h2{margin-bottom:8px}
+.about-text{color:var(--muted);font-size:0.92rem;line-height:1.7;margin-bottom:16px}
+.mv{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.mv-box{padding:24px;border-radius:var(--radius-lg);background:var(--white);border:1px solid var(--card-border);transition:all 0.3s;box-shadow:var(--card-shadow)}
+.mv-box:hover{box-shadow:var(--card-hover);border-color:var(--purple)}
+.mv-icon{width:40px;height:40px;border-radius:50%;background:var(--bubble-bg);display:flex;align-items:center;justify-content:center;margin-bottom:14px;box-shadow:var(--bubble-shadow)}
+.mv-icon svg{width:18px;height:18px;color:var(--purple)}
+.mv-box h4{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--purple);margin-bottom:8px}
+.mv-box p{font-size:0.85rem;color:var(--muted);line-height:1.65}
+.vals{margin-top:32px}
+.vals h3{font-size:0.92rem;margin-bottom:14px}
+.val-list{display:flex;flex-wrap:wrap;gap:10px}
+.val{display:flex;align-items:center;gap:10px;padding:10px 18px 10px 10px;border-radius:50px;background:var(--card-bg);backdrop-filter:blur(10px);font-size:0.82rem;font-weight:500;color:var(--text);border:1px solid var(--card-border);transition:all 0.25s;cursor:default;box-shadow:var(--card-shadow)}
+.val:hover{box-shadow:0 6px 20px rgba(74,139,217,0.1),inset 0 1px 0 rgba(255,255,255,0.6);transform:translateY(-1px)}
+.val-icon{width:32px;height:32px;border-radius:50%;background:var(--bubble-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--bubble-shadow)}
+.val-icon svg{width:15px;height:15px;color:var(--purple)}
+.about-imgs{position:relative}
+.aimg1{aspect-ratio:4/3;border-radius:var(--radius-xl);background:var(--bubble-bg);margin-bottom:14px;overflow:hidden}
+.aimg1 img{width:100%;height:100%;object-fit:cover}
+.aimg2{width:65%;margin-left:auto;aspect-ratio:3/2;border-radius:var(--radius-lg);background:var(--purple-gradient);overflow:hidden}
+.aimg2 img{width:100%;height:100%;object-fit:cover}
+
+@media(max-width:1024px){
+  .about-grid{grid-template-columns:1fr;gap:36px}
+}
+@media(max-width:768px){
+  .about{padding:56px 0}
+  .mv{grid-template-columns:1fr}
+}

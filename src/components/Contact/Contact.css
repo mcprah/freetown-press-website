@@ -1,0 +1,17 @@
+.contact{padding:80px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.c-cards{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.c-card{display:flex;align-items:flex-start;gap:14px;padding:20px;border-radius:var(--radius-xl);background:var(--card-bg);backdrop-filter:blur(10px);border:1px solid var(--card-border);transition:all 0.3s;box-shadow:var(--card-shadow)}
+.c-card:hover{box-shadow:var(--card-hover);transform:translateY(-1px)}
+.c-icon{width:44px;height:44px;border-radius:50%;background:var(--bubble-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--bubble-shadow)}
+.c-icon svg{width:18px;height:18px;color:var(--purple)}
+.c-card h4{font-size:0.82rem;font-weight:700;margin-bottom:2px}
+.c-card p{font-size:0.82rem;color:var(--muted);line-height:1.45}
+.map-box{width:100%;aspect-ratio:4/3;border-radius:var(--radius-xl);background:var(--card-bg);border:1px solid var(--card-border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.82rem;box-shadow:0 2px 16px rgba(0,0,0,0.03)}
+
+@media(max-width:1024px){
+  .contact-grid{grid-template-columns:1fr;gap:36px}
+}
+@media(max-width:768px){
+  .contact{padding:56px 0}
+}
