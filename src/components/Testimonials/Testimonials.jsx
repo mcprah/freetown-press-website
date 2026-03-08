@@ -1,7 +1,7 @@
 import './Testimonials.css'
 
 const Star = () => (
-  <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
 )
 
 const testimonials = [
@@ -27,7 +27,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="testimonials" id="portfolio">
+    <section className="testimonials" id="testimonials">
       <div className="container">
         <div className="section-head" data-reveal>
           <span className="label">Testimonials</span>
@@ -37,7 +37,7 @@ export default function Testimonials() {
         <div className="test-grid" data-reveal-stagger>
           {testimonials.map((t) => (
             <div className="tcard" key={t.initials}>
-              <div className="stars"><Star /><Star /><Star /><Star /><Star /></div>
+              <div className="stars" role="img" aria-label="5 out of 5 stars"><Star /><Star /><Star /><Star /><Star /></div>
               <blockquote>&ldquo;{t.quote}&rdquo;</blockquote>
               <div className="tcard-author">
                 <div className="avatar">{t.initials}</div>

@@ -14,20 +14,41 @@ export default function Quote() {
   const [btnDisabled, setBtnDisabled] = useState(false)
   const [btnStyle, setBtnStyle] = useState({})
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setBtnText('Submitting...')
     setBtnDisabled(true)
-    setTimeout(() => {
-      setBtnText('Quote Request Sent!')
-      setBtnStyle({ background: '#22c55e' })
+
+    const form = e.target
+    const data = new FormData(form)
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/request@freetownpress.com', {
+        method: 'POST',
+        body: data,
+      })
+
+      if (res.ok) {
+        setBtnText('Quote Request Sent!')
+        setBtnStyle({ background: '#22c55e' })
+        setTimeout(() => {
+          setBtnText('Submit Quote Request')
+          setBtnStyle({})
+          setBtnDisabled(false)
+          form.reset()
+        }, 2500)
+      } else {
+        throw new Error('Submission failed')
+      }
+    } catch {
+      setBtnText('Error — please try again')
+      setBtnStyle({ background: '#ef4444' })
       setTimeout(() => {
         setBtnText('Submit Quote Request')
         setBtnStyle({})
         setBtnDisabled(false)
-        e.target.reset()
       }, 2500)
-    }, 1200)
+    }
   }
 
   return (
@@ -48,17 +69,19 @@ export default function Quote() {
           <div className="quote-form" data-reveal="right">
             <h3>Request Your Free Quote</h3>
             <form onSubmit={handleSubmit}>
+              <input type="hidden" name="_subject" value="New Quote Request from Website" />
+              <input type="hidden" name="_template" value="table" />
               <div className="frow">
-                <div className="fgroup"><label>Full Name *</label><input type="text" placeholder="Your full name" required /></div>
-                <div className="fgroup"><label>Company Name</label><input type="text" placeholder="Your company" /></div>
+                <div className="fgroup"><label htmlFor="q-name">Full Name *</label><input id="q-name" name="name" type="text" placeholder="Your full name" required /></div>
+                <div className="fgroup"><label htmlFor="q-company">Company Name</label><input id="q-company" name="company" type="text" placeholder="Your company" /></div>
               </div>
               <div className="frow">
-                <div className="fgroup"><label>Email *</label><input type="email" placeholder="you@company.com" required /></div>
-                <div className="fgroup"><label>Phone *</label><input type="tel" placeholder="0244 069 157" required /></div>
+                <div className="fgroup"><label htmlFor="q-email">Email *</label><input id="q-email" name="email" type="email" placeholder="you@company.com" required /></div>
+                <div className="fgroup"><label htmlFor="q-phone">Phone *</label><input id="q-phone" name="phone" type="tel" placeholder="0244 069 157" required /></div>
               </div>
               <div className="fgroup">
-                <label>Service Required *</label>
-                <select required defaultValue="">
+                <label htmlFor="q-service">Service Required *</label>
+                <select id="q-service" name="service" required defaultValue="">
                   <option value="" disabled>Select a service</option>
                   <option>Corporate Branding &amp; Marketing</option>
                   <option>Printing &amp; Corporate Merchandise</option>
@@ -68,8 +91,8 @@ export default function Quote() {
                 </select>
               </div>
               <div className="fgroup">
-                <label>Project Details *</label>
-                <textarea placeholder="Tell us about your project..." required></textarea>
+                <label htmlFor="q-details">Project Details *</label>
+                <textarea id="q-details" name="details" placeholder="Tell us about your project..." required></textarea>
               </div>
               <div className="fgroup">
                 <label>Upload Artwork (Optional)</label>
@@ -77,7 +100,7 @@ export default function Quote() {
                   <p>Click to upload or <span>browse files</span></p>
                   <p>PDF, AI, PSD, JPG, PNG</p>
                 </div>
-                <input type="file" ref={fileRef} style={{ display: 'none' }} accept=".pdf,.ai,.psd,.jpg,.jpeg,.png" />
+                <input type="file" name="attachment" ref={fileRef} style={{ display: 'none' }} accept=".pdf,.ai,.psd,.jpg,.jpeg,.png" />
               </div>
               <button type="submit" className="btn btn-dark submit-btn" disabled={btnDisabled} style={btnStyle}>{btnText}</button>
             </form>

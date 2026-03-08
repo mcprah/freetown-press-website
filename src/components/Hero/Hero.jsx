@@ -12,10 +12,10 @@ export default function Hero() {
               </span>
               <span>Number 1 Branding Partner</span>
             </div>
-            <h1>Elevating Brands. Delivering <span style={{ color: 'var(--purple)' }}>Excellence.</span></h1>
+            <h1>Elevating Brands. Delivering <span style={{ color: 'var(--primary)' }}>Excellence.</span></h1>
             <p className="hero-sub">Freetown Press is your trusted partner for corporate branding, premium printing, professional training, and quality supplies across Ghana.</p>
             <div className="hero-buttons">
-              <a href="#quote" className="btn btn-dark">Get Started Free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="#quote" className="btn btn-dark">Get a Free Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
               <a href="#services" className="btn btn-outline">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 14, height: 14 }}><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </div>
           </div>

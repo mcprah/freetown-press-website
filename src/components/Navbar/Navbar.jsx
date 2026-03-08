@@ -26,27 +26,27 @@ export default function Navbar() {
             <div className="nav-links">
               <a href="#about" onClick={(e) => scrollTo(e, '#about')}>About Us</a>
               <a href="#services" onClick={(e) => scrollTo(e, '#services')}>Services</a>
-              <a href="#portfolio" onClick={(e) => scrollTo(e, '#portfolio')}>Portfolio</a>
+              <a href="#testimonials" onClick={(e) => scrollTo(e, '#testimonials')}>Testimonials</a>
               <a href="#blog" onClick={(e) => scrollTo(e, '#blog')}>Blog</a>
               <a href="#contact" onClick={(e) => scrollTo(e, '#contact')}>Contact us</a>
             </div>
             <div className="nav-right">
-              <a href="#quote" className="btn btn-primary" onClick={(e) => scrollTo(e, '#quote')}>Get Started Free</a>
+              <a href="#quote" className="btn btn-primary" onClick={(e) => scrollTo(e, '#quote')}>Get a Free Quote</a>
               <a href="#contact" className="btn btn-signin" onClick={(e) => scrollTo(e, '#contact')}>Contact Us</a>
             </div>
-            <button className="hamburger" aria-label="Menu" onClick={toggleMobile}>
+            <button className="hamburger" aria-label="Menu" aria-expanded={mobileOpen} onClick={toggleMobile}>
               <span></span><span></span><span></span>
             </button>
           </div>
         </div>
       </nav>
-      <div className={`mob-nav ${mobileOpen ? 'open' : ''}`}>
+      <div className={`mob-nav ${mobileOpen ? 'open' : ''}`} role="navigation" aria-label="Mobile navigation">
         <a href="#about" onClick={(e) => scrollTo(e, '#about')}>About Us</a>
         <a href="#services" onClick={(e) => scrollTo(e, '#services')}>Services</a>
-        <a href="#portfolio" onClick={(e) => scrollTo(e, '#portfolio')}>Portfolio</a>
+        <a href="#testimonials" onClick={(e) => scrollTo(e, '#testimonials')}>Testimonials</a>
         <a href="#blog" onClick={(e) => scrollTo(e, '#blog')}>Blog</a>
         <a href="#contact" onClick={(e) => scrollTo(e, '#contact')}>Contact us</a>
-        <a href="#quote" className="btn btn-primary" onClick={(e) => scrollTo(e, '#quote')}>Get Started Free</a>
+        <a href="#quote" className="btn btn-primary" onClick={(e) => scrollTo(e, '#quote')}>Get a Free Quote</a>
       </div>
     </>
   )

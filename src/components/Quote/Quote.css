@@ -1,4 +1,4 @@
-.quote{padding:80px 0;background:var(--purple-gradient);color:#fff;position:relative;overflow:hidden}
+.quote{padding:80px 0;background:var(--primary-gradient);color:#fff;position:relative;overflow:hidden}
 .quote::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 70%);border-radius:50%}
 .quote-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start;position:relative}
 .quote-left .label{background:rgba(255,255,255,0.15);color:#fff}
@@ -12,12 +12,12 @@
 .fgroup{margin-bottom:12px}
 .fgroup label{display:block;font-size:0.75rem;font-weight:600;margin-bottom:4px}
 .fgroup input,.fgroup select,.fgroup textarea{width:100%;padding:11px 14px;border-radius:12px;border:1px solid var(--border);font-family:inherit;font-size:0.85rem;background:var(--bg);outline:none;transition:border-color 0.2s}
-.fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(74,139,217,0.08)}
+.fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(74,139,217,0.08)}
 .fgroup textarea{resize:vertical;min-height:80px}
 .upload-area{border:2px dashed var(--border);border-radius:12px;padding:18px;text-align:center;cursor:pointer;background:var(--bg);transition:border-color 0.2s}
-.upload-area:hover{border-color:var(--purple)}
+.upload-area:hover{border-color:var(--primary)}
 .upload-area p{font-size:0.75rem;color:var(--muted)}
-.upload-area span{color:var(--purple);font-weight:600}
+.upload-area span{color:var(--primary);font-weight:600}
 .submit-btn{width:100%;padding:14px;margin-top:4px;justify-content:center;text-align:center;font-size:0.9rem;border-radius:12px}
 
 @media(max-width:1024px){

@@ -7,7 +7,7 @@ export default function WhoWeAre() {
     <section className="who" id="who">
       <div className="container">
         <div className="who-grid">
-          <div className="who-img" data-reveal="left"><img src="/images/who-we-are.webp" alt="Freetown Press team at work" /></div>
+          <div className="who-img" data-reveal="left"><img src="/images/who-we-are.webp" alt="Freetown Press team at work" loading="lazy" /></div>
           <div className="who-content" data-reveal="right">
             <span className="label">Who We Are</span>
             <h2>Your One-Stop Corporate Solutions Partner</h2>

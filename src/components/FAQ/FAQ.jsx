@@ -15,10 +15,10 @@ function FAQItem({ faq, isActive, onClick }) {
 
   return (
     <div className={`faq-item ${isActive ? 'active' : ''}`}>
-      <button className="faq-q" onClick={onClick}>
+      <button className="faq-q" onClick={onClick} aria-expanded={isActive}>
         {faq.q}
         <div className="faq-chevron">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9l6 6 6-6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </div>
       </button>
       <div className="faq-a" style={{ maxHeight: isActive ? contentRef.current?.scrollHeight : 0 }} ref={contentRef}>

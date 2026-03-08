@@ -2,12 +2,12 @@
 .steps{display:flex;align-items:flex-start;justify-content:center;gap:0}
 .step-wrapper{display:flex;align-items:flex-start;flex:1}
 .step{text-align:center;flex:1}
-.step-num{width:60px;height:60px;border-radius:50%;background:rgba(232,241,252,0.7);border:2px solid var(--purple);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.1rem;font-weight:700;color:var(--purple);transition:all 0.3s;box-shadow:inset 0 2px 6px rgba(0,0,0,0.04),0 2px 4px rgba(255,255,255,0.8)}
-.step:hover .step-num{background:var(--purple-gradient);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(74,139,217,0.3)}
+.step-num{width:60px;height:60px;border-radius:50%;background:rgba(232,241,252,0.7);border:2px solid var(--primary);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.1rem;font-weight:700;color:var(--primary);transition:all 0.3s;box-shadow:inset 0 2px 6px rgba(0,0,0,0.04),0 2px 4px rgba(255,255,255,0.8)}
+.step:hover .step-num{background:var(--primary-gradient);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(74,139,217,0.3)}
 .step h4{font-size:0.9rem;margin-bottom:4px;font-weight:700}
 .step p{font-size:0.82rem;color:var(--muted);max-width:180px;margin:0 auto;line-height:1.5}
 .step-arrow{display:flex;align-items:center;padding-top:18px;flex-shrink:0;width:48px;justify-content:center}
-.step-arrow svg{width:22px;height:22px;color:var(--purple);opacity:0.35}
+.step-arrow svg{width:22px;height:22px;color:var(--primary);opacity:0.35}
 
 @media(max-width:1024px){
   .steps{flex-wrap:wrap;gap:12px}

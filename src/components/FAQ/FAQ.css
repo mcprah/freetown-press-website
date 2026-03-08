@@ -2,11 +2,11 @@
 .faq-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
 .faq-left p{color:var(--muted);font-size:0.92rem;line-height:1.7;margin-top:10px}
 .faq-items{display:flex;flex-direction:column;gap:10px}
-.faq-item{border:1px solid var(--card-border);border-radius:var(--radius-lg);background:var(--card-bg);backdrop-filter:blur(10px);overflow:hidden;transition:all 0.3s;box-shadow:var(--card-shadow)}
+.faq-item{border:1px solid var(--card-border);border-radius:var(--radius-lg);background:rgba(255,255,255,0.85);overflow:hidden;transition:border-color 0.3s ease,box-shadow 0.3s ease;box-shadow:var(--card-shadow)}
 .faq-item.active{border-color:rgba(74,139,217,0.2);box-shadow:var(--card-hover)}
 .faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;font-weight:600;font-size:0.88rem;background:none;border:none;width:100%;text-align:left;font-family:inherit;color:inherit}
 .faq-chevron{width:26px;height:26px;border-radius:50%;background:var(--bubble-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.3s;box-shadow:var(--bubble-shadow)}
-.faq-item.active .faq-chevron{background:var(--purple-gradient);box-shadow:0 3px 10px rgba(74,139,217,0.3)}
+.faq-item.active .faq-chevron{background:var(--primary-gradient);box-shadow:0 3px 10px rgba(74,139,217,0.3)}
 .faq-chevron svg{width:12px;height:12px;color:var(--muted);transition:all 0.3s}
 .faq-item.active .faq-chevron svg{color:#fff;transform:rotate(180deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease}

@@ -43,8 +43,8 @@ export default function About() {
             </div>
           </div>
           <div className="about-imgs">
-            <div className="aimg1" data-reveal="right"><img src="/images/company-souvenirs.webp" alt="Freetown Press branded corporate souvenirs" /></div>
-            <div className="aimg2" data-reveal="right" data-delay="2"><img src="/images/workshop" alt="Freetown Press workshop" /></div>
+            <div className="aimg1" data-reveal="right"><img src="/images/company-souvenirs.webp" alt="Freetown Press branded corporate souvenirs" loading="lazy" /></div>
+            <div className="aimg2" data-reveal="right" data-delay="2"><img src="/images/workshop.webp" alt="Freetown Press workshop" loading="lazy" /></div>
           </div>
         </div>
       </div>

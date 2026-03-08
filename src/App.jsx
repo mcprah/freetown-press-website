@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import useReveal from './hooks/useReveal'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
@@ -11,12 +12,25 @@ import Industries from './components/Industries/Industries'
 import Testimonials from './components/Testimonials/Testimonials'
 import FAQ from './components/FAQ/FAQ'
 import Blog from './components/Blog/Blog'
+import BlogPost from './components/Blog/BlogPost'
 import Quote from './components/Quote/Quote'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 
 function App() {
+  const [activePost, setActivePost] = useState(null)
   useReveal()
+
+  if (activePost) {
+    return (
+      <>
+        <Navbar />
+        <BlogPost post={activePost} onBack={() => setActivePost(null)} />
+        <Footer />
+      </>
+    )
+  }
+
   return (
     <>
       <Navbar />
@@ -30,7 +44,7 @@ function App() {
       <Industries />
       <Testimonials />
       <FAQ />
-      <Blog />
+      <Blog onSelectPost={setActivePost} />
       <Quote />
       <Contact />
       <Footer />
