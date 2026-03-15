@@ -12,7 +12,7 @@ export default function BlogPost({ post, onBack }) {
         <img src={post.img} alt={post.title} />
         <div className="bp-hero-overlay" />
         <div className="bp-hero-content container">
-          <button className="bp-back" onClick={onBack} aria-label="Back to blog">
+          <button className="bp-back" onClick={() => { onBack(); setTimeout(() => { const el = document.getElementById('blog'); if (el) el.scrollIntoView({ behavior: 'smooth' }) }, 100) }} aria-label="Back to blog">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to Blog
           </button>
