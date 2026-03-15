@@ -43,5 +43,6 @@
 @media(max-width:768px){
   .bp-hero{min-height:300px}
   .bp-body{padding:36px 0 56px}
+  .bp-content{padding:0 24px}
   .bp-cta{padding:28px 20px}
 }
