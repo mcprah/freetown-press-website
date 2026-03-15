@@ -1,8 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useCallback } from 'react'
 
 export default function useReveal() {
-  useEffect(() => {
-    const els = document.querySelectorAll('[data-reveal],[data-reveal-stagger]')
+  const observe = useCallback(() => {
+    const els = document.querySelectorAll('[data-reveal]:not(.revealed),[data-reveal-stagger]:not(.revealed)')
     if (!els.length) return
 
     const io = new IntersectionObserver(
@@ -20,4 +20,16 @@ export default function useReveal() {
     els.forEach((el) => io.observe(el))
     return () => io.disconnect()
   }, [])
+
+  useEffect(() => {
+    const cleanup = observe()
+
+    const mo = new MutationObserver(() => observe())
+    mo.observe(document.body, { childList: true, subtree: true })
+
+    return () => {
+      if (cleanup) cleanup()
+      mo.disconnect()
+    }
+  }, [observe])
 }
