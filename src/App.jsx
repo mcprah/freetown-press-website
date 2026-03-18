@@ -8,6 +8,8 @@ import Services from './components/Services/Services'
 import WhyUs from './components/WhyUs/WhyUs'
 import About from './components/About/About'
 import Process from './components/Process/Process'
+import Portfolio from './components/Portfolio/Portfolio'
+import PortfolioCase from './components/Portfolio/PortfolioCase'
 import Industries from './components/Industries/Industries'
 import Testimonials from './components/Testimonials/Testimonials'
 import FAQ from './components/FAQ/FAQ'
@@ -19,7 +21,18 @@ import Footer from './components/Footer/Footer'
 
 function App() {
   const [activePost, setActivePost] = useState(null)
+  const [activeProject, setActiveProject] = useState(null)
   useReveal()
+
+  if (activeProject) {
+    return (
+      <>
+        <Navbar />
+        <PortfolioCase project={activeProject} onBack={() => setActiveProject(null)} />
+        <Footer />
+      </>
+    )
+  }
 
   if (activePost) {
     return (
@@ -40,6 +53,7 @@ function App() {
       <Services />
       <WhyUs />
       <About />
+      <Portfolio onSelectProject={setActiveProject} />
       <Process />
       <Industries />
       <Testimonials />

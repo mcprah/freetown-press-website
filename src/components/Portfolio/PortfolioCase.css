@@ -1,0 +1,219 @@
+/* ── Case Study Detail ── */
+.case-study{padding-top:0}
+
+/* ── Hero ── */
+.cs-hero{
+  position:relative;
+  height:60vh;
+  min-height:400px;
+  max-height:600px;
+  overflow:hidden;
+  background:var(--cs-color);
+}
+
+.cs-hero-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.cs-hero-abstract{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+}
+
+.cs-shape{
+  position:absolute;
+  border-radius:50%;
+}
+
+.cs-shape--1{
+  width:120%;
+  height:120%;
+  bottom:-50%;
+  right:-30%;
+  background:var(--cs-accent);
+  opacity:0.12;
+}
+
+.cs-shape--2{
+  width:50%;
+  height:50%;
+  top:-5%;
+  left:-5%;
+  background:var(--cs-accent);
+  opacity:0.08;
+}
+
+.cs-hero-logo{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  max-width:220px;
+  max-height:120px;
+  object-fit:contain;
+  z-index:2;
+  filter:brightness(0) invert(1);
+  opacity:0.35;
+}
+
+.cs-hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.4) 0%,transparent 50%);
+}
+
+/* ── Body ── */
+.cs-body{
+  padding:48px 24px 80px;
+  max-width:780px;
+  margin:0 auto;
+}
+
+/* ── Back button ── */
+.cs-back{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.82rem;
+  font-weight:600;
+  color:var(--muted);
+  background:var(--gray-bg);
+  border:1px solid var(--border);
+  cursor:pointer;
+  padding:9px 18px;
+  border-radius:50px;
+  margin-bottom:40px;
+  transition:all 0.2s;
+  font-family:inherit;
+}
+
+.cs-back:hover{
+  color:var(--primary);
+  border-color:var(--primary);
+  background:var(--primary-light);
+}
+
+.cs-back svg{width:16px;height:16px}
+
+/* ── Header ── */
+.cs-header{margin-bottom:48px}
+
+.cs-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:20px;
+}
+
+.cs-tags span{
+  font-size:0.68rem;
+  font-weight:600;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.cs-tags span:not(:last-child)::after{
+  content:', ';
+}
+
+.cs-title{
+  font-size:clamp(2rem,5vw,3rem);
+  font-weight:700;
+  line-height:1.1;
+  letter-spacing:-0.03em;
+  color:var(--dark);
+  margin-bottom:20px;
+}
+
+.cs-desc{
+  font-size:1.05rem;
+  color:var(--muted);
+  line-height:1.8;
+}
+
+/* ── Sections ── */
+.cs-section{
+  margin-bottom:40px;
+}
+
+.cs-label{
+  display:block;
+  font-size:0.7rem;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--primary);
+  margin-bottom:14px;
+}
+
+.cs-section p{
+  font-size:0.95rem;
+  color:var(--muted);
+  line-height:1.8;
+}
+
+/* ── Gallery ── */
+.cs-gallery{margin-bottom:48px}
+
+.cs-gallery-grid{
+  margin-top:4px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.cs-gallery-grid img{
+  width:100%;
+  aspect-ratio:1/1;
+  border-radius:var(--radius-lg);
+  object-fit:cover;
+}
+
+
+/* ── CTA ── */
+.cs-cta{
+  margin-top:56px;
+  padding:40px;
+  border-radius:var(--radius-xl);
+  background:var(--primary-gradient);
+  text-align:center;
+  color:#fff;
+}
+
+.cs-cta h3{
+  font-size:1.2rem;
+  color:#fff;
+  margin-bottom:6px;
+}
+
+.cs-cta p{
+  font-size:0.88rem;
+  color:rgba(255,255,255,0.7);
+  margin-bottom:20px;
+}
+
+.cs-cta .btn{
+  background:#fff;
+  color:var(--dark);
+  box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+.cs-cta .btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 22px rgba(0,0,0,0.2);
+}
+
+/* ── Responsive ── */
+@media(max-width:768px){
+  .cs-hero{height:45vh;min-height:280px}
+  .cs-body{padding:32px 24px 56px}
+  .cs-title{margin-bottom:16px}
+  .cs-cta{padding:28px 20px}
+  .cs-hero-logo{max-width:150px;max-height:80px}
+}

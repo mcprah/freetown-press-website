@@ -2,9 +2,10 @@ import './Process.css'
 
 const steps = [
   { num: '01', title: 'Consultation', desc: 'We understand your needs and brand requirements.' },
-  { num: '02', title: 'Design & Proposal', desc: 'We provide tailored solutions and cost estimates.' },
-  { num: '03', title: 'Production', desc: 'We execute with precision and quality control.' },
-  { num: '04', title: 'Delivery & Support', desc: 'We deliver on time with ongoing support.' },
+  { num: '02', title: 'Design & Approval', desc: 'We create designs and refine them until you approve.' },
+  { num: '03', title: 'Payment', desc: 'Secure and straightforward payment processing.' },
+  { num: '04', title: 'Production', desc: 'We execute with precision and quality control.' },
+  { num: '05', title: 'Delivery', desc: 'We deliver on time, every time.' },
 ]
 
 const Arrow = () => (
