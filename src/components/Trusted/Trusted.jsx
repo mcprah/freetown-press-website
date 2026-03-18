@@ -13,7 +13,6 @@ const logos = [
   { src: '/images/Company Logos/NISHMAN-logo.webp', alt: 'Nishman' },
   { src: '/images/Company Logos/royal-house-logo.webp', alt: 'Royal House' },
   { src: '/images/Company Logos/royal-ladies-arise-and-shine-logo.webp', alt: 'Royal Ladies Arise and Shine' },
-  { src: '/images/Company Logos/the-arbitrai copy.webp', alt: 'The Arbitrai' },
 ]
 
 export default function Trusted() {
@@ -26,12 +25,16 @@ export default function Trusted() {
       </div>
       <div className="marquee">
         <div className="marquee-track">
-          {logos.map((logo, i) => (
-            <img className="t-logo" key={i} src={logo.src} alt={logo.alt} loading="lazy" />
-          ))}
-          {logos.map((logo, i) => (
-            <img className="t-logo" key={`dup-${i}`} src={logo.src} alt={logo.alt} loading="lazy" />
-          ))}
+          <div className="marquee-set">
+            {logos.map((logo, i) => (
+              <img className="t-logo" key={i} src={logo.src} alt={logo.alt} loading="lazy" />
+            ))}
+          </div>
+          <div className="marquee-set" aria-hidden="true">
+            {logos.map((logo, i) => (
+              <img className="t-logo" key={`dup-${i}`} src={logo.src} alt={logo.alt} loading="lazy" />
+            ))}
+          </div>
         </div>
       </div>
     </div>

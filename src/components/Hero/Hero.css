@@ -39,7 +39,7 @@
   66%{transform:translate(40px,-20px) scale(0.94) rotate(-5deg)}
 }
 
-.hero-wave{position:absolute;bottom:0;left:0;right:0;z-index:4}
+.hero-wave{position:absolute;bottom:-1px;left:0;right:0;z-index:4}
 .hero-wave svg{display:block;width:100%}
 
 @media(max-width:768px){

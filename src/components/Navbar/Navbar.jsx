@@ -26,7 +26,7 @@ export default function Navbar() {
             <div className="nav-links">
               <a href="#about" onClick={(e) => scrollTo(e, '#about')}>About Us</a>
               <a href="#services" onClick={(e) => scrollTo(e, '#services')}>Services</a>
-              <a href="#testimonials" onClick={(e) => scrollTo(e, '#testimonials')}>Testimonials</a>
+              <a href="#portfolio" onClick={(e) => scrollTo(e, '#portfolio')}>Portfolio</a>
               <a href="#blog" onClick={(e) => scrollTo(e, '#blog')}>Blog</a>
               <a href="#contact" onClick={(e) => scrollTo(e, '#contact')}>Contact us</a>
             </div>
@@ -43,7 +43,7 @@ export default function Navbar() {
       <div className={`mob-nav ${mobileOpen ? 'open' : ''}`} role="navigation" aria-label="Mobile navigation">
         <a href="#about" onClick={(e) => scrollTo(e, '#about')}>About Us</a>
         <a href="#services" onClick={(e) => scrollTo(e, '#services')}>Services</a>
-        <a href="#testimonials" onClick={(e) => scrollTo(e, '#testimonials')}>Testimonials</a>
+        <a href="#portfolio" onClick={(e) => scrollTo(e, '#portfolio')}>Portfolio</a>
         <a href="#blog" onClick={(e) => scrollTo(e, '#blog')}>Blog</a>
         <a href="#contact" onClick={(e) => scrollTo(e, '#contact')}>Contact us</a>
         <a href="#quote" className="btn btn-primary" onClick={(e) => scrollTo(e, '#quote')}>Get a Free Quote</a>
