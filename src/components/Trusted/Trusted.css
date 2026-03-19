@@ -33,11 +33,5 @@
 
 @media(max-width:768px){
   .t-logo{height:30px}
-  .marquee-track{gap:32px}
-  .marquee-set{gap:32px;animation-duration:50s}
-
-  @keyframes marquee-slide{
-    0%{transform:translate3d(0,0,0)}
-    100%{transform:translate3d(calc(-100% - 32px),0,0)}
-  }
+  .marquee-set{animation-duration:50s}
 }
