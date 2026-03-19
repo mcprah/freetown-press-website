@@ -18,7 +18,6 @@ export default function PortfolioCase({ project, onBack, backLabel = 'Back to Pr
             <div className="cs-shape cs-shape--2" />
           </div>
         )}
-        <img className="cs-hero-logo" src={project.logo} alt="" />
         <div className="cs-hero-overlay" />
       </div>
 
