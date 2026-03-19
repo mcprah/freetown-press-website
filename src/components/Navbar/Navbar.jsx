@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Navbar.css'
 
-export default function Navbar() {
+export default function Navbar({ onShowPortfolio }) {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const scrollTo = (e, id) => {
@@ -10,6 +10,13 @@ export default function Navbar() {
     if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' })
     setMobileOpen(false)
     document.body.style.overflow = ''
+  }
+
+  const openPortfolio = (e) => {
+    e.preventDefault()
+    setMobileOpen(false)
+    document.body.style.overflow = ''
+    if (onShowPortfolio) onShowPortfolio()
   }
 
   const toggleMobile = () => {
@@ -26,7 +33,7 @@ export default function Navbar() {
             <div className="nav-links">
               <a href="#about" onClick={(e) => scrollTo(e, '#about')}>About Us</a>
               <a href="#services" onClick={(e) => scrollTo(e, '#services')}>Services</a>
-              <a href="#portfolio" onClick={(e) => scrollTo(e, '#portfolio')}>Portfolio</a>
+              <a href="#portfolio" onClick={openPortfolio}>Portfolio</a>
               <a href="#blog" onClick={(e) => scrollTo(e, '#blog')}>Blog</a>
               <a href="#contact" onClick={(e) => scrollTo(e, '#contact')}>Contact us</a>
             </div>
@@ -43,7 +50,7 @@ export default function Navbar() {
       <div className={`mob-nav ${mobileOpen ? 'open' : ''}`} role="navigation" aria-label="Mobile navigation">
         <a href="#about" onClick={(e) => scrollTo(e, '#about')}>About Us</a>
         <a href="#services" onClick={(e) => scrollTo(e, '#services')}>Services</a>
-        <a href="#portfolio" onClick={(e) => scrollTo(e, '#portfolio')}>Portfolio</a>
+        <a href="#portfolio" onClick={openPortfolio}>Portfolio</a>
         <a href="#blog" onClick={(e) => scrollTo(e, '#blog')}>Blog</a>
         <a href="#contact" onClick={(e) => scrollTo(e, '#contact')}>Contact us</a>
         <a href="#quote" className="btn btn-primary" onClick={(e) => scrollTo(e, '#quote')}>Get a Free Quote</a>

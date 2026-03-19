@@ -92,7 +92,45 @@ export const projects = [
   },
 ]
 
-export default function Portfolio({ onSelectProject }) {
+export function PortfolioCard({ project, onSelect }) {
+  return (
+    <div
+      className="pf-card"
+      style={{ '--card-color': project.color, '--card-accent': project.accent }}
+      onClick={() => onSelect(project)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && onSelect(project)}
+    >
+      {project.image ? (
+        <img className="pf-card-img" src={project.image} alt={project.title} />
+      ) : (
+        <div className="pf-card-bg">
+          <div className="pf-card-shape pf-card-shape--1" />
+          <div className="pf-card-shape pf-card-shape--2" />
+          <div className="pf-card-shape pf-card-shape--3" />
+        </div>
+      )}
+      {!project.image && <img className="pf-logo" src={project.logo} alt="" />}
+      <div className="pf-card-content">
+        <span className="pf-category">{project.category}</span>
+        <h3 className="pf-title">{project.title}</h3>
+      </div>
+      <div className="pf-card-overlay">
+        <span className="pf-category">{project.category}</span>
+        <h3 className="pf-title">{project.title}</h3>
+        <span className="pf-view">
+          View Case Study
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </span>
+      </div>
+    </div>
+  )
+}
+
+const preview = projects.slice(0, 3)
+
+export default function Portfolio({ onSelectProject, onViewAll }) {
   return (
     <section className="portfolio" id="portfolio">
       <div className="container">
@@ -101,41 +139,16 @@ export default function Portfolio({ onSelectProject }) {
           <h2>Selected Projects</h2>
           <p>A glimpse into the brands and campaigns we've brought to life.</p>
         </div>
-        <div className="pf-grid" data-reveal-stagger>
-          {projects.map((p, i) => (
-            <div
-              className="pf-card"
-              key={p.id}
-              style={{ '--card-color': p.color, '--card-accent': p.accent }}
-              onClick={() => onSelectProject(p)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && onSelectProject(p)}
-            >
-              {p.image ? (
-                <img className="pf-card-img" src={p.image} alt={p.title} />
-              ) : (
-                <div className="pf-card-bg">
-                  <div className="pf-card-shape pf-card-shape--1" />
-                  <div className="pf-card-shape pf-card-shape--2" />
-                  <div className="pf-card-shape pf-card-shape--3" />
-                </div>
-              )}
-              {!p.image && <img className="pf-logo" src={p.logo} alt="" />}
-              <div className="pf-card-content">
-                <span className="pf-category">{p.category}</span>
-                <h3 className="pf-title">{p.title}</h3>
-              </div>
-              <div className="pf-card-overlay">
-                <span className="pf-category">{p.category}</span>
-                <h3 className="pf-title">{p.title}</h3>
-                <span className="pf-view">
-                  View Case Study
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                </span>
-              </div>
-            </div>
+        <div className="pf-grid pf-grid--preview" data-reveal-stagger>
+          {preview.map((p) => (
+            <PortfolioCard key={p.id} project={p} onSelect={onSelectProject} />
           ))}
+        </div>
+        <div className="pf-view-all" data-reveal>
+          <button className="pf-view-all-btn" onClick={onViewAll}>
+            View All Projects
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
         </div>
       </div>
     </section>

@@ -27,12 +27,12 @@ export default function Trusted() {
         <div className="marquee-track">
           <div className="marquee-set">
             {logos.map((logo, i) => (
-              <img className="t-logo" key={i} src={logo.src} alt={logo.alt} loading="lazy" />
+              <img className="t-logo" key={i} src={logo.src} alt={logo.alt} />
             ))}
           </div>
           <div className="marquee-set" aria-hidden="true">
             {logos.map((logo, i) => (
-              <img className="t-logo" key={`dup-${i}`} src={logo.src} alt={logo.alt} loading="lazy" />
+              <img className="t-logo" key={`dup-${i}`} src={logo.src} alt={logo.alt} />
             ))}
           </div>
         </div>

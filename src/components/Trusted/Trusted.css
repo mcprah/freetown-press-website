@@ -8,7 +8,7 @@
 .marquee::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
 .marquee::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
 
-.marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 40s linear infinite}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:marquee-scroll 40s linear infinite;will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden}
 
 .marquee-track:hover{animation-play-state:paused}
 
@@ -17,17 +17,18 @@
 .t-logo{height:40px;width:auto;object-fit:contain;flex-shrink:0;filter:grayscale(100%) opacity(0.5);transition:filter 0.3s ease}
 .t-logo:hover{filter:grayscale(0%) opacity(1)}
 
-@keyframes scroll{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(calc(-50% - 24px))}
+@keyframes marquee-scroll{
+  0%{transform:translate3d(0,0,0)}
+  100%{transform:translate3d(calc(-50% - 24px),0,0)}
 }
 
 @media(max-width:768px){
   .t-logo{height:44px}
-  .marquee-track{gap:36px;animation-duration:30s}
+  .marquee-track{gap:36px;animation:marquee-scroll-m 40s linear infinite}
   .marquee-set{gap:36px}
-  @keyframes scroll{
-    0%{transform:translateX(0)}
-    100%{transform:translateX(calc(-50% - 18px))}
-  }
+}
+
+@keyframes marquee-scroll-m{
+  0%{transform:translate3d(0,0,0)}
+  100%{transform:translate3d(calc(-50% - 18px),0,0)}
 }

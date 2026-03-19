@@ -1,0 +1,182 @@
+/* ══════════════════════════════════════
+   Portfolio Page — Standalone
+   ══════════════════════════════════════ */
+.pp{
+  padding:120px 0 0;
+  background:var(--white);
+}
+
+/* ── Back button ── */
+.pp-back{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.82rem;
+  font-weight:600;
+  color:var(--muted);
+  background:var(--gray-bg);
+  border:1px solid var(--border);
+  cursor:pointer;
+  padding:9px 18px;
+  border-radius:50px;
+  margin-bottom:40px;
+  transition:all 0.2s;
+  font-family:inherit;
+}
+
+.pp-back:hover{
+  color:var(--primary);
+  border-color:var(--primary);
+  background:var(--primary-light);
+}
+
+.pp-back svg{width:16px;height:16px}
+
+/* ── Filters ── */
+.pp-filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:32px;
+}
+
+.pp-filter{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:0.82rem;
+  font-weight:600;
+  color:var(--muted);
+  background:var(--gray-bg);
+  border:1px solid var(--border);
+  padding:9px 18px;
+  border-radius:50px;
+  cursor:pointer;
+  transition:all 0.2s;
+  font-family:inherit;
+}
+
+.pp-filter:hover{
+  color:var(--dark);
+  border-color:var(--dark);
+  background:#fff;
+}
+
+.pp-filter--active{
+  color:#fff;
+  background:var(--dark);
+  border-color:var(--dark);
+}
+
+.pp-filter--active:hover{
+  color:#fff;
+  background:var(--dark);
+}
+
+.pp-filter-count{
+  font-size:0.68rem;
+  font-weight:700;
+  background:rgba(255,255,255,0.2);
+  padding:1px 7px;
+  border-radius:50px;
+  line-height:1.5;
+}
+
+/* ══════════════════════════════════════
+   Bento Grid (full layout — all 6 cards)
+   ══════════════════════════════════════ */
+.pf-grid--bento{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:220px 220px;
+  gap:16px;
+}
+
+.pf-grid--bento .pf-card:nth-child(1){grid-column:1;grid-row:1/3}
+.pf-grid--bento .pf-card:nth-child(2){grid-column:2;grid-row:1}
+.pf-grid--bento .pf-card:nth-child(3){grid-column:3;grid-row:1}
+.pf-grid--bento .pf-card:nth-child(4){grid-column:2/4;grid-row:2}
+.pf-grid--bento .pf-card:nth-child(5){grid-column:4;grid-row:1}
+.pf-grid--bento .pf-card:nth-child(6){grid-column:4;grid-row:2}
+
+/* ── Filtered grid (when category selected) ── */
+.pf-grid--filtered{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-auto-rows:240px;
+  gap:16px;
+}
+
+/* ── CTA Section ── */
+.pp-cta{
+  padding:80px 0;
+}
+
+.pp-cta-inner{
+  padding:56px 40px;
+  border-radius:var(--radius-xl);
+  background:var(--primary-gradient);
+  text-align:center;
+  color:#fff;
+}
+
+.pp-cta-inner h2{
+  font-size:clamp(1.4rem,3vw,2rem);
+  font-weight:700;
+  color:#fff;
+  margin-bottom:10px;
+}
+
+.pp-cta-inner p{
+  font-size:0.95rem;
+  color:rgba(255,255,255,0.7);
+  margin-bottom:28px;
+}
+
+.pp-cta-inner .btn{
+  background:#fff;
+  color:var(--dark);
+  box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+.pp-cta-inner .btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 6px 22px rgba(0,0,0,0.2);
+}
+
+/* ── Responsive ── */
+@media(max-width:1024px){
+  .pf-grid--bento{
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:auto;
+    grid-auto-rows:200px;
+  }
+  .pf-grid--bento .pf-card:nth-child(1){grid-column:1;grid-row:1/3}
+  .pf-grid--bento .pf-card:nth-child(2){grid-column:2;grid-row:1}
+  .pf-grid--bento .pf-card:nth-child(3){grid-column:2;grid-row:2}
+  .pf-grid--bento .pf-card:nth-child(4){grid-column:1/3;grid-row:3}
+  .pf-grid--bento .pf-card:nth-child(5){grid-column:1;grid-row:4}
+  .pf-grid--bento .pf-card:nth-child(6){grid-column:2;grid-row:4}
+
+  .pf-grid--filtered{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:768px){
+  .pp{padding:100px 0 0}
+  .pp-filters{gap:6px;margin-bottom:24px}
+  .pp-filter{font-size:0.76rem;padding:7px 14px}
+  .pp-cta{padding:56px 0}
+  .pp-cta-inner{padding:36px 24px}
+}
+
+@media(max-width:600px){
+  .pf-grid--bento{
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+    grid-auto-rows:200px;
+    gap:12px;
+  }
+  .pf-grid--bento .pf-card:nth-child(n){grid-column:1;grid-row:auto}
+
+  .pf-grid--filtered{grid-template-columns:1fr;grid-auto-rows:200px;gap:12px}
+}
