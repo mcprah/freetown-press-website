@@ -19,5 +19,8 @@ footer{background:var(--dark);padding:48px 0 0;color:rgba(255,255,255,0.45)}
   .ft-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
-  .ft-grid{grid-template-columns:1fr;gap:24px}
+  .ft-grid{grid-template-columns:1fr;gap:24px;text-align:center}
+  .ft-brand p{margin-left:auto;margin-right:auto}
+  .ft-social{justify-content:center}
+  .ft-bottom{justify-content:center}
 }

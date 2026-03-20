@@ -44,6 +44,10 @@
 
 @media(max-width:768px){
   .hero{padding:120px 0 60px;min-height:auto}
+  .hero-grid{text-align:center;margin:0 auto}
+  .hero-badge{margin-left:auto;margin-right:auto}
+  .hero-sub{margin-left:auto;margin-right:auto}
+  .hero-buttons{justify-content:center}
 }
 @media(max-width:480px){
   .hero-buttons{flex-direction:column}
