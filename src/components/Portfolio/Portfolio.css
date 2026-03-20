@@ -9,6 +9,20 @@
   background:var(--card-color);
 }
 
+/* ── Brand color overlay ── */
+.pf-card::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(160deg,
+    color-mix(in srgb, var(--card-color) 40%, transparent) 0%,
+    color-mix(in srgb, var(--card-color) 75%, transparent) 100%
+  );
+  pointer-events:none;
+  transition:opacity 0.4s ease;
+}
+
 /* ── Photo cover image ── */
 .pf-card-img{
   position:absolute;
@@ -96,8 +110,8 @@
   left:0;
   right:0;
   padding:24px;
-  z-index:2;
-  background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 100%);
+  z-index:4;
+  background:linear-gradient(to top,rgba(0,0,0,0.3) 0%,transparent 100%);
 }
 
 .pf-category{
@@ -121,7 +135,7 @@
 .pf-card-overlay{
   position:absolute;
   inset:0;
-  z-index:3;
+  z-index:5;
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
