@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { projects, PortfolioCard } from './Portfolio'
 import './PortfolioPage.css'
 
 const categories = ['All', ...new Set(projects.map((p) => p.category))]
 
-export default function PortfolioPage({ onSelectProject, onBack }) {
+export default function PortfolioPage() {
   const [active, setActive] = useState('All')
 
   useEffect(() => {
@@ -16,19 +17,10 @@ export default function PortfolioPage({ onSelectProject, onBack }) {
   return (
     <section className="pp">
       <div className="container">
-        <button
-          className="pp-back"
-          onClick={() => {
-            onBack()
-            setTimeout(() => {
-              const el = document.getElementById('portfolio')
-              if (el) el.scrollIntoView({ behavior: 'smooth' })
-            }, 100)
-          }}
-        >
+        <Link to="/#portfolio" className="pp-back">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
           Back to Home
-        </button>
+        </Link>
 
         <div className="section-head">
           <span className="label">Our Work</span>
@@ -51,7 +43,7 @@ export default function PortfolioPage({ onSelectProject, onBack }) {
 
         <div className={`pf-grid${active === 'All' ? ' pf-grid--bento' : ' pf-grid--filtered'}`}>
           {filtered.map((p) => (
-            <PortfolioCard key={p.id} project={p} onSelect={onSelectProject} />
+            <PortfolioCard key={p.id} project={p} />
           ))}
         </div>
 
@@ -59,10 +51,10 @@ export default function PortfolioPage({ onSelectProject, onBack }) {
           <div className="pp-cta-inner">
             <h2>Have a project in mind?</h2>
             <p>Let's create something exceptional together.</p>
-            <a href="#quote" className="btn btn-dark" onClick={onBack}>
+            <Link to="/#quote" className="btn btn-dark">
               Request a Free Quote
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

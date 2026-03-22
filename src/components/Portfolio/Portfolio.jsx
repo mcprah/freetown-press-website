@@ -1,3 +1,4 @@
+import { Link, useNavigate } from 'react-router-dom'
 import './Portfolio.css'
 
 export const projects = [
@@ -113,15 +114,16 @@ export const projects = [
   },
 ]
 
-export function PortfolioCard({ project, onSelect }) {
+export function PortfolioCard({ project }) {
+  const navigate = useNavigate()
   return (
     <div
       className="pf-card"
       style={{ '--card-color': project.color, '--card-accent': project.accent }}
-      onClick={() => onSelect(project)}
+      onClick={() => navigate(`/portfolio/${project.id}`)}
       role="button"
       tabIndex={0}
-      onKeyDown={(e) => e.key === 'Enter' && onSelect(project)}
+      onKeyDown={(e) => e.key === 'Enter' && navigate(`/portfolio/${project.id}`)}
     >
       {project.image ? (
         <img className="pf-card-img" src={project.image} alt={project.title} />
@@ -151,7 +153,7 @@ export function PortfolioCard({ project, onSelect }) {
 
 const preview = projects.slice(0, 3)
 
-export default function Portfolio({ onSelectProject, onViewAll }) {
+export default function Portfolio() {
   return (
     <section className="portfolio" id="portfolio">
       <div className="container">
@@ -162,14 +164,14 @@ export default function Portfolio({ onSelectProject, onViewAll }) {
         </div>
         <div className="pf-grid pf-grid--preview" data-reveal-stagger>
           {preview.map((p) => (
-            <PortfolioCard key={p.id} project={p} onSelect={onSelectProject} />
+            <PortfolioCard key={p.id} project={p} />
           ))}
         </div>
         <div className="pf-view-all" data-reveal>
-          <button className="pf-view-all-btn" onClick={onViewAll}>
+          <Link to="/portfolio" className="pf-view-all-btn">
             View All Projects
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

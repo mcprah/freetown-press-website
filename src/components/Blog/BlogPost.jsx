@@ -1,10 +1,24 @@
 import { useEffect } from 'react'
+import { useParams, Link } from 'react-router-dom'
+import blogContent from '../../data/blogContent'
 import './BlogPost.css'
 
-export default function BlogPost({ post, onBack }) {
+export default function BlogPost() {
+  const { slug } = useParams()
+  const post = blogContent.find((p) => p.slug === slug)
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [])
+  }, [slug])
+
+  if (!post) {
+    return (
+      <div style={{ padding: '120px 24px', textAlign: 'center' }}>
+        <h2>Post not found</h2>
+        <Link to="/#blog">Back to Blog</Link>
+      </div>
+    )
+  }
 
   return (
     <article className="blog-post">
@@ -12,10 +26,10 @@ export default function BlogPost({ post, onBack }) {
         <img src={post.img} alt={post.title} />
         <div className="bp-hero-overlay" />
         <div className="bp-hero-content container">
-          <button className="bp-back" onClick={() => { onBack(); setTimeout(() => { const el = document.getElementById('blog'); if (el) el.scrollIntoView({ behavior: 'smooth' }) }, 100) }} aria-label="Back to blog">
+          <Link to="/#blog" className="bp-back" aria-label="Back to blog">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to Blog
-          </button>
+          </Link>
           <span className="bp-cat">{post.cat}</span>
           <h1>{post.title}</h1>
           <div className="bp-meta">
@@ -42,10 +56,10 @@ export default function BlogPost({ post, onBack }) {
           <div className="bp-cta">
             <h3>Ready to get started?</h3>
             <p>Talk to our team about your project.</p>
-            <a href="#quote" className="btn btn-dark" onClick={onBack}>
+            <Link to="/#quote" className="btn btn-dark">
               Request a Free Quote
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

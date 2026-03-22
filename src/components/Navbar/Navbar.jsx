@@ -1,22 +1,28 @@
 import { useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import './Navbar.css'
 
-export default function Navbar({ onShowPortfolio }) {
+export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
-  const scrollTo = (e, id) => {
+  const goToSection = (e, id) => {
     e.preventDefault()
-    const el = document.querySelector(id)
-    if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' })
     setMobileOpen(false)
     document.body.style.overflow = ''
+
+    if (location.pathname === '/') {
+      const el = document.querySelector(id)
+      if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' })
+    } else {
+      navigate('/' + id)
+    }
   }
 
-  const openPortfolio = (e) => {
-    e.preventDefault()
+  const closeMobile = () => {
     setMobileOpen(false)
     document.body.style.overflow = ''
-    if (onShowPortfolio) onShowPortfolio()
   }
 
   const toggleMobile = () => {
@@ -29,17 +35,17 @@ export default function Navbar({ onShowPortfolio }) {
       <nav>
         <div className="container">
           <div className="nav-inner">
-            <a href="#home" className="logo" onClick={(e) => scrollTo(e, '#home')}>Freetown<span>Press</span></a>
+            <Link to="/" className="logo" onClick={closeMobile}>Freetown<span>Press</span></Link>
             <div className="nav-links">
-              <a href="#about" onClick={(e) => scrollTo(e, '#about')}>About Us</a>
-              <a href="#services" onClick={(e) => scrollTo(e, '#services')}>Services</a>
-              <a href="#portfolio" onClick={openPortfolio}>Portfolio</a>
-              <a href="#blog" onClick={(e) => scrollTo(e, '#blog')}>Blog</a>
-              <a href="#contact" onClick={(e) => scrollTo(e, '#contact')}>Contact us</a>
+              <a href="#about" onClick={(e) => goToSection(e, '#about')}>About Us</a>
+              <a href="#services" onClick={(e) => goToSection(e, '#services')}>Services</a>
+              <Link to="/portfolio">Portfolio</Link>
+              <a href="#blog" onClick={(e) => goToSection(e, '#blog')}>Blog</a>
+              <a href="#contact" onClick={(e) => goToSection(e, '#contact')}>Contact us</a>
             </div>
             <div className="nav-right">
-              <a href="#quote" className="btn btn-primary" onClick={(e) => scrollTo(e, '#quote')}>Get a Free Quote</a>
-              <a href="#contact" className="btn btn-signin" onClick={(e) => scrollTo(e, '#contact')}>Contact Us</a>
+              <a href="#quote" className="btn btn-primary" onClick={(e) => goToSection(e, '#quote')}>Get a Free Quote</a>
+              <a href="#contact" className="btn btn-signin" onClick={(e) => goToSection(e, '#contact')}>Contact Us</a>
             </div>
             <button className="hamburger" aria-label="Menu" aria-expanded={mobileOpen} onClick={toggleMobile}>
               <span></span><span></span><span></span>
@@ -48,12 +54,12 @@ export default function Navbar({ onShowPortfolio }) {
         </div>
       </nav>
       <div className={`mob-nav ${mobileOpen ? 'open' : ''}`} role="navigation" aria-label="Mobile navigation">
-        <a href="#about" onClick={(e) => scrollTo(e, '#about')}>About Us</a>
-        <a href="#services" onClick={(e) => scrollTo(e, '#services')}>Services</a>
-        <a href="#portfolio" onClick={openPortfolio}>Portfolio</a>
-        <a href="#blog" onClick={(e) => scrollTo(e, '#blog')}>Blog</a>
-        <a href="#contact" onClick={(e) => scrollTo(e, '#contact')}>Contact us</a>
-        <a href="#quote" className="btn btn-primary" onClick={(e) => scrollTo(e, '#quote')}>Get a Free Quote</a>
+        <a href="#about" onClick={(e) => goToSection(e, '#about')}>About Us</a>
+        <a href="#services" onClick={(e) => goToSection(e, '#services')}>Services</a>
+        <Link to="/portfolio" onClick={closeMobile}>Portfolio</Link>
+        <a href="#blog" onClick={(e) => goToSection(e, '#blog')}>Blog</a>
+        <a href="#contact" onClick={(e) => goToSection(e, '#contact')}>Contact us</a>
+        <a href="#quote" className="btn btn-primary" onClick={(e) => goToSection(e, '#quote')}>Get a Free Quote</a>
       </div>
     </>
   )

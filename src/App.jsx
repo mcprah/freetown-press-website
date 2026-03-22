@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import useReveal from './hooks/useReveal'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
@@ -20,68 +21,52 @@ import Quote from './components/Quote/Quote'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 
-function App() {
-  const [activePost, setActivePost] = useState(null)
-  const [activeProject, setActiveProject] = useState(null)
-  const [showPortfolio, setShowPortfolio] = useState(false)
+function ScrollToHash() {
+  const { hash } = useLocation()
+  useEffect(() => {
+    if (hash) {
+      setTimeout(() => {
+        const el = document.querySelector(hash)
+        if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' })
+      }, 100)
+    }
+  }, [hash])
+  return null
+}
+
+function HomePage() {
   useReveal()
-
-  const openPortfolio = () => setShowPortfolio(true)
-
-  if (activeProject) {
-    return (
-      <>
-        <Navbar onShowPortfolio={openPortfolio} />
-        <PortfolioCase
-          project={activeProject}
-          onBack={() => setActiveProject(null)}
-          backLabel={showPortfolio ? 'Back to Portfolio' : 'Back to Projects'}
-        />
-        <Footer />
-      </>
-    )
-  }
-
-  if (showPortfolio) {
-    return (
-      <>
-        <Navbar onShowPortfolio={openPortfolio} />
-        <PortfolioPage
-          onSelectProject={setActiveProject}
-          onBack={() => setShowPortfolio(false)}
-        />
-        <Footer />
-      </>
-    )
-  }
-
-  if (activePost) {
-    return (
-      <>
-        <Navbar onShowPortfolio={openPortfolio} />
-        <BlogPost post={activePost} onBack={() => setActivePost(null)} />
-        <Footer />
-      </>
-    )
-  }
-
   return (
     <>
-      <Navbar onShowPortfolio={openPortfolio} />
       <Hero />
       <Trusted />
       <WhoWeAre />
       <Services />
       <WhyUs />
       <About />
-      <Portfolio onSelectProject={setActiveProject} onViewAll={() => setShowPortfolio(true)} />
+      <Portfolio />
       <Process />
       <Industries />
       <Testimonials />
       <FAQ />
-      <Blog onSelectPost={setActivePost} />
+      <Blog />
       <Quote />
       <Contact />
+    </>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <ScrollToHash />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/portfolio/:id" element={<PortfolioCase />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+      </Routes>
       <Footer />
     </>
   )
