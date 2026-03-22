@@ -9,16 +9,13 @@
   background:var(--card-color);
 }
 
-/* ── Brand color overlay ── */
+/* ── Dark overlay ── */
 .pf-card::after{
   content:'';
   position:absolute;
   inset:0;
   z-index:1;
-  background:linear-gradient(160deg,
-    color-mix(in srgb, var(--card-color) 40%, transparent) 0%,
-    color-mix(in srgb, var(--card-color) 75%, transparent) 100%
-  );
+  background:linear-gradient(160deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%);
   pointer-events:none;
   transition:opacity 0.4s ease;
 }
