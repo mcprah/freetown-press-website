@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container">
         <div className="ft-grid">
           <div className="ft-brand">
-            <a href="#home" className="logo">Freetown<span>Press</span></a>
+            <a href="#home" className="logo"><img src="/images/Freetown-Logo-Ico-Text-white.webp" alt="Freetown Press" /></a>
             <p>Your trusted partner for corporate branding, premium printing, professional training, and quality supplies across Ghana.</p>
             <div className="ft-social">
               <a href="https://facebook.com/freetownpress" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>

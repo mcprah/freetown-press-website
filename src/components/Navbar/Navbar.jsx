@@ -35,7 +35,7 @@ export default function Navbar() {
       <nav>
         <div className="container">
           <div className="nav-inner">
-            <Link to="/" className="logo" onClick={closeMobile}>Freetown<span>Press</span></Link>
+            <Link to="/" className="logo" onClick={(e) => { closeMobile(); if (location.pathname === '/') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) } }}><img src="/images/Freetown-Logo-Ico-Text.webp" alt="Freetown Press" /></Link>
             <div className="nav-links">
               <a href="#about" onClick={(e) => goToSection(e, '#about')}>About Us</a>
               <a href="#services" onClick={(e) => goToSection(e, '#services')}>Services</a>

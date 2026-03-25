@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './FAQ.css'
 
 const faqs = [
@@ -12,6 +12,15 @@ const faqs = [
 
 function FAQItem({ faq, isActive, onClick }) {
   const contentRef = useRef(null)
+  const [height, setHeight] = useState(0)
+
+  useEffect(() => {
+    if (isActive && contentRef.current) {
+      setHeight(contentRef.current.scrollHeight)
+    } else {
+      setHeight(0)
+    }
+  }, [isActive])
 
   return (
     <div className={`faq-item ${isActive ? 'active' : ''}`}>
@@ -21,7 +30,7 @@ function FAQItem({ faq, isActive, onClick }) {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </div>
       </button>
-      <div className="faq-a" style={{ maxHeight: isActive ? contentRef.current?.scrollHeight : 0 }} ref={contentRef}>
+      <div className="faq-a" style={{ maxHeight: height }} ref={contentRef}>
         <div className="faq-a-inner">{faq.a}</div>
       </div>
     </div>

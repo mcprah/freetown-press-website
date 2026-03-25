@@ -22,15 +22,17 @@ import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 
 function ScrollToHash() {
-  const { hash } = useLocation()
+  const { hash, pathname } = useLocation()
   useEffect(() => {
     if (hash) {
       setTimeout(() => {
         const el = document.querySelector(hash)
         if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' })
       }, 100)
+    } else {
+      window.scrollTo(0, 0)
     }
-  }, [hash])
+  }, [hash, pathname])
   return null
 }
 

@@ -1,7 +1,7 @@
 footer{background:var(--dark);padding:48px 0 0;color:rgba(255,255,255,0.45)}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,0.08)}
-.ft-brand .logo{margin-bottom:12px;display:inline-block;color:#fff}
-.ft-brand .logo span{color:var(--primary)}
+.ft-brand .logo{margin-bottom:12px;display:inline-block}
+.ft-brand .logo img{height:36px;width:auto}
 .ft-brand p{font-size:0.82rem;line-height:1.65;max-width:280px;margin-bottom:14px}
 .ft-social{display:flex;gap:8px}
 .ft-social a{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;transition:all 0.2s}
