@@ -47,7 +47,7 @@ export default function Navbar() {
               <a href="#quote" className="btn btn-primary" onClick={(e) => goToSection(e, '#quote')}>Get a Free Quote</a>
               <a href="#contact" className="btn btn-signin" onClick={(e) => goToSection(e, '#contact')}>Contact Us</a>
             </div>
-            <button className="hamburger" aria-label="Menu" aria-expanded={mobileOpen} onClick={toggleMobile}>
+            <button className={`hamburger${mobileOpen ? ' active' : ''}`} aria-label="Menu" aria-expanded={mobileOpen} onClick={toggleMobile}>
               <span></span><span></span><span></span>
             </button>
           </div>
