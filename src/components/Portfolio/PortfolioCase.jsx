@@ -75,7 +75,7 @@ export default function PortfolioCase() {
 
         <div className="cs-section">
           <span className="cs-label">The Solution</span>
-          <p>{project.solution}</p>
+          {project.solution.split('\n\n').map((para, i) => <p key={i}>{para}</p>)}
         </div>
 
         {project.gallery?.length > 0 && (

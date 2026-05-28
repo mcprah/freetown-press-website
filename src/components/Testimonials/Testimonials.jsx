@@ -7,15 +7,15 @@ const Star = () => (
 const testimonials = [
   {
     quote: 'Freetown Press transformed our entire brand identity. Their attention to detail and professionalism is unmatched.',
-    initials: 'AK',
-    name: 'Ama Koranteng',
-    role: 'CEO, Koranteng Holdings',
+    initials: 'JK',
+    name: 'Joana Kyeremateng',
+    role: 'MD, AddenTech and DennisLaw',
   },
   {
     quote: 'The printing quality is outstanding and delivery is always on time. They\'ve become our go-to partner for all corporate materials.',
-    initials: 'KM',
-    name: 'Kwame Mensah',
-    role: 'Operations Manager, GhanaFirst Ltd',
+    initials: 'LD',
+    name: 'Lauraine Darkwah',
+    role: 'Lead Convener, Disputes Convocation',
   },
   {
     quote: 'Their training programs are engaging and practical. Our team came away with actionable skills we\'ve already started implementing.',

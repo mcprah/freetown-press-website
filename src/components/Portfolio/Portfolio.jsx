@@ -32,9 +32,9 @@ export const projects = [
       '/images/kfc-cap-freetown.webp',
       '/images/kfc-cap-dt-contest.jpeg',
     ],
-    desc: 'A full-scale brand activation campaign for KFC Ghana, spanning outdoor signage, promotional merchandise, and event branding materials that brought the iconic brand to life across multiple touchpoints.',
+    desc: 'A full-scale brand activation campaign for KFC Ghana, spanning outdoor signage, promotional merchandise, and event branding materials that carried the KFC brand consistently across every format.',
     challenge: 'KFC required a cohesive brand activation that would maintain global brand consistency while resonating with the Ghanaian market. Every touchpoint — from parasols to banners — needed to feel unmistakably KFC while being adapted for local events and outdoor conditions.',
-    solution: 'We produced a complete suite of branded materials including custom parasols, pull-up banners, branded tents, and event signage. Each piece was produced with weather-resistant materials and vibrant colour reproduction to ensure the signature KFC red remained bold and consistent across all formats.',
+    solution: 'We produced a complete suite of branded materials including custom parasols, pull-up banners, branded tents, and event signage. Each piece was produced with weather-resistant materials and vibrant colour reproduction to ensure the signature KFC red remained bold and consistent across all formats.\n\nAll materials were delivered ahead of the activation date and deployed across multiple locations in Accra.',
   },
   {
     id: 'nib',
@@ -51,9 +51,9 @@ export const projects = [
       '/images/national-investment-bank-pin.webp',
       '/images/national-investment-bank-pen copy.webp',
     ],
-    desc: 'A complete range of branded corporate souvenirs for National Investment Bank — from tumbler cups and water bottles to lapel pins and executive pens — designed to strengthen brand presence at every touchpoint.',
+    desc: 'A complete range of branded corporate souvenirs for National Investment Bank — from tumbler cups and water bottles to lapel pins and executive pens designed to strengthen brand presence at every level.',
     challenge: 'NIB needed a cohesive collection of corporate souvenirs that reflected the prestige of a leading financial institution. Each item had to feel premium and purposeful, serving as both a functional gift and a lasting brand impression.',
-    solution: 'We curated and produced a suite of branded merchandise including insulated tumbler cups, stainless steel water bottles, enamel lapel pins, and executive pens — each featuring the NIB identity in deep navy and blue, ensuring consistency and quality across every piece.',
+    solution: 'We curated and produced a suite of branded merchandise including insulated tumbler cups, stainless steel water bottles, enamel lapel pins, and executive pens — each featuring the NIB identity in deep navy and blue, ensuring consistency and quality across every piece.\n\nThe full collection was delivered on schedule and presented as part of NIB\'s corporate gifting programme.',
   },
   {
     id: 'sic',
@@ -70,7 +70,7 @@ export const projects = [
       '/images/sic-insurance-lunchbox.webp',
     ],
     desc: 'Branded promotional materials and corporate merchandise for SIC Insurance — including pull-up banners, cooler bags, and face towels — reinforcing their trusted presence at events and client engagements.',
-    challenge: 'SIC Insurance needed a range of branded materials that could work across corporate events, client meetings, and promotional campaigns while maintaining the authority and trust associated with one of Ghana\'s oldest insurers.',
+    challenge: 'SIC Insurance needed a range of branded materials that could work across corporate events, client meetings, and promotional campaigns while reinforcing the authority and visibility of one of Ghana\'s most established insurers.',
     solution: 'We produced a versatile collection including step-and-repeat pull-up banners for events, branded cooler bags in the signature SIC blue, and embroidered face towels — each item designed to keep the brand front and centre across every client interaction.',
   },
   {
@@ -92,7 +92,7 @@ export const projects = [
     ],
     desc: 'A comprehensive range of branded materials for Bayport Financial Services — from executive notebooks and wooden pens to branded apparel, tissue boxes, and event gazebos.',
     challenge: 'Bayport needed a full suite of branded materials that could serve both day-to-day office use and outdoor promotional events, all while conveying the professionalism expected in financial services.',
-    solution: 'We delivered an end-to-end branded collection: premium leather-look notebooks, custom wooden pens, embroidered shirts, branded tissue boxes for client-facing spaces, and a large-format gazebo for outdoor events — all unified under Bayport\'s green identity.',
+    solution: 'We delivered an end-to-end branded collection: premium leather-look notebooks, custom wooden pens, embroidered shirts, branded tissue boxes for client-facing spaces, and a large-format gazebo for outdoor events, all unified under Bayport\'s green identity.\n\nThe full collection was delivered on schedule and rolled out across Bayport\'s office locations and promotional events.',
   },
   {
     id: 'dennislaw',
