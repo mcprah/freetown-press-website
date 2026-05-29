@@ -65,18 +65,22 @@ export default function PortfolioCase() {
             {project.tags.map((t) => <span key={t}>{t}</span>)}
           </div>
           <h1 className="cs-title">{project.title}</h1>
-          <p className="cs-desc">{project.desc}</p>
+          {project.desc && <p className="cs-desc">{project.desc}</p>}
         </div>
 
-        <div className="cs-section">
-          <span className="cs-label">The Challenge</span>
-          <p>{project.challenge}</p>
-        </div>
+        {project.challenge && (
+          <div className="cs-section">
+            <span className="cs-label">The Challenge</span>
+            <p>{project.challenge}</p>
+          </div>
+        )}
 
-        <div className="cs-section">
-          <span className="cs-label">The Solution</span>
-          {project.solution.split('\n\n').map((para, i) => <p key={i}>{para}</p>)}
-        </div>
+        {project.solution && (
+          <div className="cs-section">
+            <span className="cs-label">The Solution</span>
+            {project.solution.split('\n\n').map((para, i) => <p key={i}>{para}</p>)}
+          </div>
+        )}
 
         {project.gallery?.length > 0 && (
           <div className="cs-gallery">

@@ -88,7 +88,7 @@
 .pf-grid--bento{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  grid-template-rows:220px 220px;
+  grid-auto-rows:220px;
   gap:16px;
 }
 
@@ -98,6 +98,7 @@
 .pf-grid--bento .pf-card:nth-child(4){grid-column:2/4;grid-row:2}
 .pf-grid--bento .pf-card:nth-child(5){grid-column:4;grid-row:1}
 .pf-grid--bento .pf-card:nth-child(6){grid-column:4;grid-row:2}
+/* 7th card onward: auto-flow into uniform rows below the featured 6 */
 
 /* ── Filtered grid (when category selected) ── */
 .pf-grid--filtered{
