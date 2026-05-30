@@ -8,26 +8,32 @@
 .mv-icon svg{width:18px;height:18px;color:var(--primary)}
 .mv-box h4{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--primary);margin-bottom:8px}
 .mv-box p{font-size:0.85rem;color:var(--muted);line-height:1.65}
-.vals{margin-top:32px}
+.vals{margin-top:100px}
 .vals h3{font-size:0.92rem;margin-bottom:14px}
-.val-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;align-items:start}
-.val{border-radius:var(--radius);background:rgba(255,255,255,0.85);border:1px solid var(--card-border);transition:box-shadow 0.25s ease,border-color 0.25s ease;box-shadow:var(--card-shadow);overflow:hidden}
+.val-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.val{display:flex;flex-direction:column;border-radius:var(--radius);background:rgba(255,255,255,0.85);border:1px solid var(--card-border);transition:box-shadow 0.25s ease;box-shadow:var(--card-shadow)}
 .val:hover{box-shadow:0 6px 20px rgba(74,139,217,0.1),inset 0 1px 0 rgba(255,255,255,0.6)}
-.val.open{box-shadow:var(--card-hover);border-color:var(--primary)}
-.val-head{display:flex;align-items:center;gap:10px;width:100%;padding:10px 14px 10px 10px;background:none;border:none;cursor:pointer;font-family:inherit;text-align:left;font-size:0.82rem;font-weight:500;color:var(--text)}
-.val-head:focus-visible{outline:2px solid var(--primary);outline-offset:-2px;border-radius:var(--radius)}
+.val-head{display:flex;align-items:center;gap:10px;padding:12px 14px 6px 12px;font-size:0.82rem;font-weight:600;color:var(--text)}
 .val-name{flex:1}
 .val-icon{width:32px;height:32px;border-radius:50%;background:var(--bubble-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--bubble-shadow)}
 .val-icon svg{width:15px;height:15px;color:var(--primary)}
-.val-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.3s cubic-bezier(0.22,1,0.36,1)}
-.val.open .val-body{grid-template-rows:1fr}
-.val-body-inner{overflow:hidden;min-height:0}
-.val-body-inner p{margin:0;padding:0 14px 14px;font-size:0.8rem;line-height:1.6;color:var(--muted)}
+.val-body{flex:1;display:flex;align-items:center;padding:0 14px 14px}
+.val-body p{margin:0;font-size:0.8rem;line-height:1.6;color:var(--muted)}
 .about-imgs{position:relative}
 .aimg1{aspect-ratio:4/3;border-radius:var(--radius-xl);background:var(--bubble-bg);margin-bottom:14px;overflow:hidden}
 .aimg1 img{width:100%;height:100%;object-fit:cover}
-.aimg2{width:65%;margin-left:auto;aspect-ratio:3/2;border-radius:var(--radius-lg);background:var(--primary-gradient);overflow:hidden}
+.aimg2{width:90%;margin-left:auto;aspect-ratio:3/2;border-radius:var(--radius-lg);background:var(--primary-gradient);overflow:hidden}
 .aimg2 img{width:100%;height:100%;object-fit:cover}
+
+/* Desktop: stretch columns; float text down and pin Mission/Vision to bottom so the
+   gap above the heading equals the gap between the paragraphs and the M/V boxes */
+@media(min-width:1025px){
+  .about-grid{align-items:stretch}
+  .about-grid > div:first-child{display:flex;flex-direction:column}
+  .about-grid > div:first-child > .label{align-self:flex-start}
+  .about-grid > div:first-child > .about-text:first-of-type{margin-top:auto}
+  .mv{margin-top:auto}
+}
 
 @media(max-width:1024px){
   .about-grid{grid-template-columns:1fr;gap:36px}

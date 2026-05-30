@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './About.css'
 
 const values = [
@@ -10,10 +9,6 @@ const values = [
 ]
 
 export default function About() {
-  const [openVal, setOpenVal] = useState(null)
-
-  const toggleVal = (name) => setOpenVal((prev) => (prev === name ? null : name))
-
   return (
     <section className="about" id="about">
       <div className="container">
@@ -35,38 +30,26 @@ export default function About() {
                 <p>To be the partner every organisation in West Africa turns to when their brand and business image matter.</p>
               </div>
             </div>
-            <div className="vals" data-reveal>
-              <h3>Our Core Values</h3>
-              <div className="val-list" data-reveal-stagger>
-                {values.map((v) => {
-                  const isOpen = openVal === v.name
-                  const panelId = `val-panel-${v.name.toLowerCase()}`
-                  return (
-                    <div className={`val${isOpen ? ' open' : ''}`} key={v.name}>
-                      <button
-                        type="button"
-                        className="val-head"
-                        aria-expanded={isOpen}
-                        aria-controls={panelId}
-                        onClick={() => toggleVal(v.name)}
-                      >
-                        <span className="val-icon">{v.icon}</span>
-                        <span className="val-name">{v.name}</span>
-                      </button>
-                      <div className="val-body" id={panelId} role="region" aria-label={v.name} inert={!isOpen || undefined}>
-                        <div className="val-body-inner">
-                          <p>{v.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
           </div>
           <div className="about-imgs">
             <div className="aimg1" data-reveal="right"><img src="/images/company-souvenirs.webp" alt="Freetown Press branded corporate souvenirs" loading="lazy" /></div>
             <div className="aimg2" data-reveal="right" data-delay="2"><img src="/images/freetown-workshop.webp" alt="Freetown Press workshop" loading="lazy" /></div>
+          </div>
+        </div>
+        <div className="vals" data-reveal>
+          <h3>Our Core Values</h3>
+          <div className="val-list" data-reveal-stagger>
+            {values.map((v) => (
+              <div className="val" key={v.name}>
+                <div className="val-head">
+                  <span className="val-icon">{v.icon}</span>
+                  <span className="val-name">{v.name}</span>
+                </div>
+                <div className="val-body">
+                  <p>{v.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
