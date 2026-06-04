@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import BrandingTagsExplorer from './BrandingTagsExplorer'
 import './Services.css'
 
 const services = [
@@ -7,12 +8,28 @@ const services = [
     title: 'Corporate Branding & Marketing',
     desc: 'We build strong, memorable brands through strategic design and marketing support that communicate clearly and confidently.',
     tags: ['Logo Design', 'Brand Identity', 'Brochures', 'Social Media', 'Event Branding', 'Rebranding'],
+    tagPreviews: [
+      { slug: 'logo-design',    label: 'Logo Design',    image: '/images/gridco-shirts-freetown.webp',                      portfolioId: 'gridco' },
+      { slug: 'brand-identity', label: 'Brand Identity', image: '/images/national-investment-bank-souvenir-bottle.webp',    portfolioId: 'nib' },
+      { slug: 'brochures',      label: 'Brochures',      image: '/images/sic-insurance-pullups.webp',                       portfolioId: 'sic' },
+      { slug: 'social-media',   label: 'Social Media',   image: '/images/kfc/kfc-coffee-promotional-graphic.jpeg',          portfolioId: 'kfc' },
+      { slug: 'event-branding', label: 'Event Branding', image: '/images/dennislaw-backdrop-freetown.webp',                 portfolioId: 'dennislaw' },
+      { slug: 'rebranding',     label: 'Rebranding',     image: '/images/bayport-notebook-freetown.webp',                   portfolioId: 'bayport' },
+    ],
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="6" y="3" width="12" height="18" rx="1"/><path d="M6 7h12M6 11h12M6 15h12"/></svg>,
     title: 'Premium Printing & Corporate Merchandise',
     desc: 'High-quality printing and customised corporate items crafted to leave a lasting impression.',
     tags: ['Business Cards', 'Banners', 'Branded Apparel', 'Gift Sets', 'Annual Reports', 'ID Cards'],
+    tagPreviews: [
+      { slug: 'business-cards', label: 'Business Cards', image: '/images/national-investment-bank-pen copy.webp',           portfolioId: 'nib' },
+      { slug: 'banners',        label: 'Banners',        image: '/images/dennislaw-pullup-banner.webp',                     portfolioId: 'dennislaw' },
+      { slug: 'branded-apparel',label: 'Branded Apparel',image: '/images/brand-apparel/dstv-for-business-branded-polo-shirt.jpeg', portfolioId: 'branded-apparel' },
+      { slug: 'gift-sets',      label: 'Gift Sets',      image: '/images/gift-set/corporate-gift-sets-display-shelf.jpeg',  portfolioId: 'gift-sets' },
+      { slug: 'annual-reports', label: 'Annual Reports', image: '/images/bayport-notebook-freetown.webp',                   portfolioId: 'bayport' },
+      { slug: 'id-cards',       label: 'ID Cards',       image: '/images/national-investment-bank-pin.webp',                portfolioId: 'nib' },
+    ],
   },
   {
     icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>,
@@ -67,9 +84,13 @@ export default function Services() {
                 </button>
                 <div className="tags-wrap" id={panelId} inert={!isOpen || undefined}>
                   <div className="tags-inner">
-                    <div className="tags">
-                      {s.tags.map((t) => <span className="tag" key={t}>{t}</span>)}
-                    </div>
+                    {s.tagPreviews ? (
+                      <BrandingTagsExplorer tags={s.tagPreviews} />
+                    ) : (
+                      <div className="tags">
+                        {s.tags.map((t) => <span className="tag" key={t}>{t}</span>)}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
