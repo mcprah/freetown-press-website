@@ -252,10 +252,10 @@ export function PortfolioCard({ project }) {
     <div
       className="pf-card"
       style={{ '--card-color': project.color, '--card-accent': project.accent }}
-      onClick={() => navigate(`/portfolio/${project.id}`)}
+      onClick={() => navigate(`/portfolio/${project.id}`, { state: { from: '/portfolio' } })}
       role="button"
       tabIndex={0}
-      onKeyDown={(e) => e.key === 'Enter' && navigate(`/portfolio/${project.id}`)}
+      onKeyDown={(e) => e.key === 'Enter' && navigate(`/portfolio/${project.id}`, { state: { from: '/portfolio' } })}
     >
       {project.image ? (
         <img className="pf-card-img" src={project.image} alt={project.title} />

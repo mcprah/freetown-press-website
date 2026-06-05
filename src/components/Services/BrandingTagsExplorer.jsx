@@ -15,6 +15,7 @@ export default function BrandingTagsExplorer({ tags }) {
 
   const [hoveredTag, setHoveredTag] = useState(null)
   const [pos, setPos] = useState({ x: 0, y: 0 })
+  const [selectedTag, setSelectedTag] = useState(null)
   const [isCoarse, setIsCoarse] = useState(false)
 
   useEffect(() => {
@@ -64,28 +65,60 @@ export default function BrandingTagsExplorer({ tags }) {
     setHoveredTag(null)
   }
 
+  const goTo = (tag) => {
+    const path = tag.portfolioId ? `/portfolio/${tag.portfolioId}` : '/portfolio'
+    navigate(path, { state: { from: '/#services' } })
+  }
+
   const onTagClick = (tag) => {
     setHoveredTag(null)
-    navigate(tag.portfolioId ? `/portfolio/${tag.portfolioId}` : '/portfolio')
+    if (isCoarse) {
+      setSelectedTag((prev) => (prev?.slug === tag.slug ? null : tag))
+    } else {
+      goTo(tag)
+    }
+  }
+
+  const onViewMore = () => {
+    if (selectedTag) goTo(selectedTag)
   }
 
   return (
     <div className="bte" ref={containerRef} onMouseMove={onMouseMove}>
       <div className="bte-tags">
-        {tags.map((t) => (
-          <button
-            key={t.slug}
-            type="button"
-            className="bte-tag"
-            onMouseEnter={(e) => onTagEnter(t, e)}
-            onMouseLeave={onTagLeave}
-            onClick={() => onTagClick(t)}
-            aria-label={`View ${t.label} portfolio`}
-          >
-            {t.label}
-          </button>
-        ))}
+        {tags.map((t) => {
+          const isSelected = selectedTag?.slug === t.slug
+          return (
+            <button
+              key={t.slug}
+              type="button"
+              className={`bte-tag${isSelected ? ' bte-tag--active' : ''}`}
+              onMouseEnter={(e) => onTagEnter(t, e)}
+              onMouseLeave={onTagLeave}
+              onClick={() => onTagClick(t)}
+              aria-label={isCoarse ? `Preview ${t.label}` : `View ${t.label} portfolio`}
+              aria-expanded={isCoarse ? isSelected : undefined}
+            >
+              {t.label}
+            </button>
+          )
+        })}
       </div>
+
+      {isCoarse && selectedTag && (
+        <div className="bte-mobile-preview" role="region" aria-label={`${selectedTag.label} preview`}>
+          <img className="bte-mobile-preview-img" src={selectedTag.image} alt={selectedTag.label} />
+          <div className="bte-mobile-preview-body">
+            <span className="bte-mobile-preview-label">{selectedTag.label}</span>
+            <button type="button" className="bte-mobile-preview-cta" onClick={onViewMore}>
+              View more
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
 
       {!isCoarse && hoveredTag && createPortal(
         <div

@@ -1,12 +1,17 @@
 import { useEffect, useState, useCallback } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, useLocation, Link } from 'react-router-dom'
 import { projects } from './Portfolio'
 import './PortfolioCase.css'
 
 export default function PortfolioCase() {
   const { id } = useParams()
+  const location = useLocation()
   const project = projects.find((p) => p.id === id)
   const [lightbox, setLightbox] = useState(null)
+
+  const fromServices = location.state?.from === '/#services'
+  const backTo = fromServices ? '/#services' : '/portfolio'
+  const backLabel = fromServices ? 'Back to Services' : 'Back to Portfolio'
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -55,9 +60,9 @@ export default function PortfolioCase() {
 
       {/* Body */}
       <div className="cs-body container">
-        <Link to="/portfolio" className="cs-back" aria-label="Back to portfolio">
+        <Link to={backTo} className="cs-back" aria-label={backLabel}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          Back to Portfolio
+          {backLabel}
         </Link>
 
         <div className="cs-header">
