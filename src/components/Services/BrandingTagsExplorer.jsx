@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import './BrandingTagsExplorer.css'
 
-export default function BrandingTagsExplorer({ tags }) {
+export default function BrandingTagsExplorer({ tags, returnTo = '/services' }) {
   return (
     <div className="bte" aria-label="Service examples">
       {tags.map((tag) => {
@@ -46,7 +46,7 @@ export default function BrandingTagsExplorer({ tags }) {
             className={className}
             key={tag.slug}
             to={`/portfolio/${tag.portfolioId}`}
-            state={{ from: '/#services' }}
+            state={{ from: returnTo }}
             aria-label={`View ${tag.label} portfolio example`}
           >
             {content}

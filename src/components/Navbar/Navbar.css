@@ -5,6 +5,7 @@ nav .nav-inner{background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);-web
 .nav-links{display:flex;gap:28px}
 .nav-links a{font-size:0.85rem;font-weight:500;color:var(--muted);transition:color 0.2s;white-space:nowrap}
 .nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--primary)}
 .nav-right{display:flex;align-items:center;gap:8px}
 .nav-right .btn{padding:10px 22px;font-size:0.82rem}
 .nav-right .btn-primary{background:var(--primary-gradient);color:#fff;box-shadow:0 3px 12px rgba(74,139,217,0.3)}
@@ -24,6 +25,7 @@ nav .nav-inner{background:rgba(255,255,255,0.85);backdrop-filter:blur(16px);-web
 .mob-nav.open{opacity:1;pointer-events:all}
 .mob-nav a{font-size:1.2rem;font-weight:600;color:var(--text)}
 .mob-nav a:hover{color:var(--primary)}
+.mob-nav a.active{color:var(--primary)}
 
 /* Medium range: tighten nav and drop the redundant Contact Us button */
 @media(min-width:769px) and (max-width:1024px){

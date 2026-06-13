@@ -9,8 +9,8 @@ export default function PortfolioCase() {
   const project = projects.find((p) => p.id === id)
   const [lightbox, setLightbox] = useState(null)
 
-  const fromServices = location.state?.from === '/#services'
-  const backTo = fromServices ? '/#services' : '/portfolio'
+  const fromServices = location.state?.from === '/services' || location.state?.from === '/#services'
+  const backTo = fromServices ? location.state.from : '/portfolio'
   const backLabel = fromServices ? 'Back to Services' : 'Back to Portfolio'
 
   useEffect(() => {

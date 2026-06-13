@@ -5,7 +5,8 @@ import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import Trusted from './components/Trusted/Trusted'
 import WhoWeAre from './components/WhoWeAre/WhoWeAre'
-import Services from './components/Services/Services'
+import ServicesPreview from './components/Services/ServicesPreview'
+import ServicesPage from './components/Services/ServicesPage'
 import WhyUs from './components/WhyUs/WhyUs'
 import About from './components/About/About'
 import Process from './components/Process/Process'
@@ -43,7 +44,7 @@ function HomePage() {
       <Hero />
       <Trusted />
       <WhoWeAre />
-      <Services />
+      <ServicesPreview />
       <WhyUs />
       <About />
       <Portfolio />
@@ -65,6 +66,7 @@ function App() {
       <ScrollToHash />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/portfolio/:id" element={<PortfolioCase />} />
         <Route path="/blog/:slug" element={<BlogPost />} />

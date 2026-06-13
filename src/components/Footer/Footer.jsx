@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container">
         <div className="ft-grid">
           <div className="ft-brand">
-            <a href="#home" className="logo"><img src="/images/Freetown-Logo-Ico-Text-white.webp" alt="Freetown Press" /></a>
+            <a href="/#home" className="logo"><img src="/images/Freetown-Logo-Ico-Text-white.webp" alt="Freetown Press" /></a>
             <p>Your trusted partner for corporate branding, premium printing, professional training, and quality supplies across Ghana.</p>
             <div className="ft-social">
               <a href="https://facebook.com/freetownpress" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
@@ -17,22 +17,22 @@ export default function Footer() {
           </div>
           <div className="ft-col">
             <h4>Services</h4>
-            <a href="#services">Corporate Branding</a>
-            <a href="#services">Printing &amp; Merch</a>
-            <a href="#services">Professional Training</a>
-            <a href="#services">Business Supplies</a>
+            <a href="/services#branding-marketing">Corporate Branding</a>
+            <a href="/services#printing-merchandise">Printing &amp; Merch</a>
+            <a href="/services#professional-training">Professional Training</a>
+            <a href="/services#business-supplies">Business Supplies</a>
           </div>
           <div className="ft-col">
             <h4>Company</h4>
-            <a href="#about">About Us</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact">Contact</a>
+            <a href="/#about">About Us</a>
+            <a href="/#testimonials">Testimonials</a>
+            <a href="/#blog">Blog</a>
+            <a href="/#contact">Contact</a>
           </div>
           <div className="ft-col">
             <h4>Quick Links</h4>
-            <a href="#quote">Request a Quote</a>
-            <a href="#services">Our Services</a>
+            <a href="/#quote">Request a Quote</a>
+            <a href="/services">Our Services</a>
             <a href="/terms">Terms &amp; Conditions</a>
             <a href="/privacy">Privacy Policy</a>
           </div>
