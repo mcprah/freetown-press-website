@@ -38,7 +38,7 @@ export default function Navbar() {
             <Link to="/" className="logo" onClick={(e) => { closeMobile(); if (location.pathname === '/') { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) } }}><img src="/images/Freetown-Logo-Ico-Text.webp" alt="Freetown Press" /></Link>
             <div className="nav-links">
               <a href="#about" onClick={(e) => goToSection(e, '#about')}>About Us</a>
-              <a href="#services" onClick={(e) => goToSection(e, '#services')}>Services</a>
+              <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>Services</Link>
               <Link to="/portfolio">Portfolio</Link>
               <a href="#blog" onClick={(e) => goToSection(e, '#blog')}>Blog</a>
               <a href="#contact" onClick={(e) => goToSection(e, '#contact')}>Contact us</a>
@@ -55,7 +55,7 @@ export default function Navbar() {
       </nav>
       <div className={`mob-nav ${mobileOpen ? 'open' : ''}`} role="navigation" aria-label="Mobile navigation">
         <a href="#about" onClick={(e) => goToSection(e, '#about')}>About Us</a>
-        <a href="#services" onClick={(e) => goToSection(e, '#services')}>Services</a>
+        <Link to="/services" className={location.pathname === '/services' ? 'active' : ''} onClick={closeMobile}>Services</Link>
         <Link to="/portfolio" onClick={closeMobile}>Portfolio</Link>
         <a href="#blog" onClick={(e) => goToSection(e, '#blog')}>Blog</a>
         <a href="#contact" onClick={(e) => goToSection(e, '#contact')}>Contact us</a>
