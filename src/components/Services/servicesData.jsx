@@ -23,7 +23,7 @@ export const services = [
     previewImage: '/images/ghana-bar/ghana-bar-association-conference-gift-set.jpeg',
     previewAlt: 'Ghana Bar Association conference gift set',
     tagPreviews: [
-      { slug: 'business-cards', label: 'Business Cards', image: '/images/company-souvenirs.webp', alt: 'Printed business cards arranged with corporate stationery', imagePosition: '20% 72%' },
+      { slug: 'business-cards', label: 'Business Cards', image: '/images/dstv-callcard-mock.webp', alt: 'Printed DStv call cards arranged as a branded card mockup', imagePosition: '20% 72%' },
       { slug: 'banners', label: 'Banners', image: '/images/sic-insurance-pullups.webp', alt: 'SIC Insurance branded pull-up banner', portfolioId: 'sic' },
       { slug: 'branded-apparel', label: 'Branded Apparel', image: '/images/brand-apparel/dstv-for-business-branded-polo-shirt.jpeg', alt: 'DStv for Business branded polo shirt', portfolioId: 'branded-apparel' },
       { slug: 'gift-sets', label: 'Gift Sets', image: '/images/ghana-bar/ghana-bar-association-conference-gift-set.jpeg', alt: 'Ghana Bar Association conference gift set', portfolioId: 'gba' },
