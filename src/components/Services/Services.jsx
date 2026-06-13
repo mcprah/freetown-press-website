@@ -12,7 +12,7 @@ const services = [
       { slug: 'brochures', label: 'Brochures', image: '/images/company-souvenirs.webp', alt: 'Printed corporate collateral arranged with branded merchandise', imagePosition: '32% center' },
       { slug: 'social-media', label: 'Social Media', image: '/images/kfc/kfc-coffee-promotional-graphic.jpeg', alt: 'KFC promotional campaign graphic', portfolioId: 'kfc' },
       { slug: 'event-branding', label: 'Event Branding', image: '/images/dennislaw-backdrop-freetown.webp', alt: 'DennisLaw branded event backdrop', portfolioId: 'dennislaw' },
-      { slug: 'rebranding', label: 'Rebranding' },
+      { slug: 'rebranding', label: 'Rebranding', image: '/images/impact/impact-life-insurance-office-glass-branding.jpeg', alt: 'Impact Life Insurance office glass branding', portfolioId: 'impact' },
     ],
   },
   {
