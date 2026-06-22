@@ -1,6 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './Portfolio.css'
 
+// Shared with the portfolio detail route and the build-time SEO manifest.
+// eslint-disable-next-line react-refresh/only-export-components
 export const projects = [
   {
     id: 'gridco',

@@ -33,13 +33,10 @@ export default function Footer() {
             <h4>Quick Links</h4>
             <a href="/#quote">Request a Quote</a>
             <a href="/services">Our Services</a>
-            <a href="/terms">Terms &amp; Conditions</a>
-            <a href="/privacy">Privacy Policy</a>
           </div>
         </div>
         <div className="ft-bottom">
           <span>&copy; {new Date().getFullYear()} Freetown Press. All rights reserved.</span>
-          <div><a href="/privacy">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="/terms">Terms</a></div>
         </div>
       </div>
     </footer>
