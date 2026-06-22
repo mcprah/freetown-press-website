@@ -21,6 +21,8 @@ import BlogPost from './components/Blog/BlogPost'
 import Quote from './components/Quote/Quote'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
+import Seo from './components/Seo/Seo'
+import NotFound from './components/NotFound/NotFound'
 
 function ScrollToHash() {
   const { hash, pathname } = useLocation()
@@ -62,6 +64,7 @@ function HomePage() {
 function App() {
   return (
     <>
+      <Seo />
       <Navbar />
       <ScrollToHash />
       <Routes>
@@ -70,6 +73,7 @@ function App() {
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/portfolio/:id" element={<PortfolioCase />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

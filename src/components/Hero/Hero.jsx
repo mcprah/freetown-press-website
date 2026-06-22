@@ -6,12 +6,12 @@ export default function Hero() {
       <div className="container">
         <div className="hero-grid">
           <div>
-            <div className="hero-badge">
+            {/* <div className="hero-badge">
               <span className="hero-badge-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               </span>
               <span>Your Trusted Branding Partner</span>
-            </div>
+            </div> */}
             <h1>Elevating Brands. Delivering <span style={{ color: 'var(--primary)' }}>Excellence.</span></h1>
             <p className="hero-sub">Freetown Press is your trusted partner for corporate branding, premium printing, professional training, and quality supplies across Ghana.</p>
             <div className="hero-buttons">
